@@ -1,9 +1,10 @@
-### Create another container to manage another model in another API.
+
+## Create another container to manage another model in another API.
 
 Create a new server1 folder inside the root project containing the version 2 model, which will be the second container
 Create a Dockerfile in this server1 folder with the following configuration
 
-    ```bash
+   
         FROM python:3.7
 
         WORKDIR /server1
@@ -15,12 +16,12 @@ Create a Dockerfile in this server1 folder with the following configuration
         COPY . .
         EXPOSE 8001
         CMD "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001" , "--reload"  
-    ```
+    
 
 
-    #Update the docker-compose.yml file by adding information from the second server.
+Update the docker-compose.yml file by adding information from the second server
 
- ```bash
+
 version: "3.7"
 
 services:
@@ -57,14 +58,13 @@ services:
 networks:
   AIservice:
     external: true   
- ```
 
 
 Run the following command to create the Docker Compose images
 
- ```bash
-docker-compose -f docker-compose.yml up --build
-```
+ 
+    docker-compose -f docker-compose.yml up --build
+
 
 As a result, the following image will be displayed:
 (docs/imgs/dockercompose.png)
@@ -74,8 +74,6 @@ Access http://127.0.0.1:3000/, and you will see a message like this "front-end i
 
 (docs/imgs/front1.png)
 (docs/imgs/front2.png)
-
-
 
 
 A file called main.log will be created automatically inside the container. We will inspect it below.
