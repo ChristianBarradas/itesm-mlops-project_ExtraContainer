@@ -72,8 +72,8 @@ As a result, the following image will be displayed:
 Checking endpoints for app
 Access http://127.0.0.1:3000/, and you will see a message like this "front-end is all ready to go!"
 
-  ![FastAPI Docs](docs/imgs/front1.png)
-(docs/imgs/front2.png)
+  ![FastAPI](docs/imgs/front1.png)
+  ![FastAPI Docs](docs/imgs/front2.png)
 
 
 A file called main.log will be created automatically inside the container. We will inspect it below.
