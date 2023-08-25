@@ -67,7 +67,7 @@ Run the following command to create the Docker Compose images
 
 
 As a result, the following image will be displayed:
- ![DockerCompose](docs/imgs/front1.png)(docs/imgs/dockercompose.png)
+ ![DockerCompose](docs/imgs/dockercompose.png)
 
 Checking endpoints for app
 Access http://127.0.0.1:3000/, and you will see a message like this "front-end is all ready to go!"
