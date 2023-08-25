@@ -4,17 +4,17 @@ Create a new server1 folder inside the root project containing the version 2 mod
 Create a Dockerfile in this server1 folder with the following configuration
 
     ```bash
-    FROM python:3.7
+        FROM python:3.7
 
-    WORKDIR /server1
-    COPY requirements.txt ./
-    COPY . ./
-    RUN pip3 install --no-cache-dir -r requirements.txt
-    RUN apt-get update && apt-get install -y vim
+        WORKDIR /server1
+        COPY requirements.txt ./
+        COPY . ./
+        RUN pip3 install --no-cache-dir -r requirements.txt
+        RUN apt-get update && apt-get install -y vim
 
-    COPY . .
-    EXPOSE 8001
-    CMD "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001" , "--reload"  
+        COPY . .
+        EXPOSE 8001
+        CMD "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001" , "--reload"  
     ```
 
 
@@ -60,11 +60,23 @@ networks:
  ```
 
 
-#Run the following command to create the Docker Compose images
+Run the following command to create the Docker Compose images
 
  ```bash
 docker-compose -f docker-compose.yml up --build
 ```
 
 As a result, the following image will be displayed:
+(docs/imgs/dockercompose.png)
 
+Checking endpoints for app
+Access http://127.0.0.1:3000/, and you will see a message like this "front-end is all ready to go!"
+
+(docs/imgs/front1.png)
+(docs/imgs/front2.png)
+
+
+
+
+A file called main.log will be created automatically inside the container. We will inspect it below.
+Access http://127.0.0.1:8000/docs, the browser will display something like this:
