@@ -1,0 +1,10 @@
+requests
+fastapi
+numpy
+pydantic
+uvicorn
+joblib
+scikit-learn
+tensorflow
+pandas
+keras
